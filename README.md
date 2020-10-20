@@ -2,7 +2,7 @@
 
 You'll have to make a three steps satisfaction form with [Ruby on Rails](https://rubyonrails.org/) that'll look like:
 
-![Three steps form mockup](https://raw.githubusercontent.com/we-link/fullstack-test/main/mockup.png)
+![Three steps form wireframe](https://raw.githubusercontent.com/we-link/fullstack-test/main/wireframe.png)
 
 ## Instructions
 
