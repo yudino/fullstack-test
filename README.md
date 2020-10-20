@@ -4,8 +4,6 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
 
 ![Three steps form mockup](https://raw.githubusercontent.com/we-link/fullstack-test/main/mockup.png)
 
-(Sorry, I'm not a designer, but it's the idea)
-
 ## Instructions
 
 1. First thing first, fork this repository.
