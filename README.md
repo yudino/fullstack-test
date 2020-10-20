@@ -21,6 +21,7 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
 
 5. There shouldn't be a (real) page reload between two steps.
   * (We're using [React's function components](https://reactjs.org/docs/components-and-props.html#function-and-class-components) here at We Link)
+  * ([React Rails](https://github.com/reactjs/react-rails) can be useful)
   
 6. Make it fancy (at least less ugly than my wireframe)
 
