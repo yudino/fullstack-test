@@ -24,7 +24,7 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
   
 6. Make it fancy (at least less ugly than my wireframe)
 
-7. Now allow the `/feedback` route accept a GET request
+7. Now allow the `/feedback` route to accept a GET request
   * with two parameters: `p` and `n` (eg: http://localhost/feedback?p=1&n=10), the response will be a JSON document containing a set of messages depending of the params, p=1 and n=10 will return messages 1 to 10, p=3 and n=15 will return messages 46 to 60.
   * If no param is provided, or if you got only one of the two, return a JSON document containing all messages.
   
@@ -40,7 +40,7 @@ You tell me.
 
 You don't have a time limit to finish. 
 
-If you struggle, do the most that you can, I'll be glad to talk with you about what wents wrong.
+If you struggle, do the most that you can, I'll be glad to talk with you about what went wrong.
 
 Try to commit your work more than once while you're coding, and efficiently.
 
