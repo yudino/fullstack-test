@@ -27,7 +27,7 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
 
 7. Now allow the `/feedback` route to accept a GET request which can take 5 optional params and returns a JSON document:
   * a parameter `s` (eg: http://localhost/feedback?s=foo) which allow to search into any fields (content, firstname, lastname and email) and will return the matching reviews.
-  * two parameters: `o` which can take a column name and `d` which can be `asc` or `desc` and allow to sort the results on the given column.
+  * two parameters: `o` which can take a column name and `d` which can be `asc` or `desc` and allow to sort the results on the given column. (eg: http://localhost/feedback?o=name&=asc)
   * two parameters: `p` and `n` (eg: http://localhost/feedback?p=1&n=10), the response will be a JSON document containing a set of messages depending of the params, p=1 and n=10 will return messages 1 to 10, p=3 and n=15 will return messages 46 to 60, and matching the search if present.
   * If no params are provided, return the first page with the 10 first messages, order by creation date, older first.
   
