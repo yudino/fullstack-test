@@ -1,6 +1,7 @@
 class Info < ApplicationRecord
+    has_one :message
     validates :firstname, presence: true
     validates :lastname, presence: true
     validates :email, presence: true
-    has_one :message
+    accepts_nested_attributes_for :message
 end
