@@ -44,7 +44,7 @@ export default function App() {
                 "info": {
                     "firstname": "${info.firstname}",
                     "lastname": "${info.lastname}",
-                    "email": "${info.firstname}",
+                    "email": "${info.email}",
                     "message_attributes": {
                         "review": "${message.review}"
                     }
