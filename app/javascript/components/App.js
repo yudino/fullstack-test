@@ -8,20 +8,19 @@ export default function App() {
     const [page, setPage] = useState(1);
     const [data, setData] = useState({
         info: {
-            firstname: '',
-            lastname: '',
-            email: '',
-            message_attributes: {
-                review: ''
-            }
+            firstname: "",
+            lastname: "",
+            email: ""
         },
-
+        message: {
+            review: ""
+        }
     });
     const [subForm, setSubForm] = useState(false);
 
     useEffect(() => {
         if (subForm === true) {
-            submit()
+            submit(data)
         }
     }, [subForm])
 
@@ -39,18 +38,30 @@ export default function App() {
         setSubForm(true)
     }
 
-    function submit() {
+    function submit({ info, message }) {
+        const formData = `
+            {
+                "info": {
+                    "firstname": "${info.firstname}",
+                    "lastname": "${info.lastname}",
+                    "email": "${info.firstname}",
+                    "message_attributes": {
+                        "review": "${message.review}"
+                    }
+                }
+            }
+        `
+        console.log(JSON.parse(formData))
 
-        console.log(JSON.stringify(data))
-
-        // axios.post('http://localhost:3000/feedbacks', data)
-        //     .then(function (response) {
-        //          console.log(response);
-        //      })
-        //      .catch(function (error) {
-        //          console.log(error);
-        //      });
-
+        
+        axios.post('http://localhost:3000/feedbacks', JSON.parse(formData))
+            .then(function (response) {
+                 console.log(response);
+             })
+             .catch(function (error) {
+                 console.log(error);
+             });
+        
     }
 
 
@@ -90,7 +101,6 @@ function FormPartOne({ update, navigation }) {
 
                 <button type="submit">Next</button>
             </form>
-            {/*<button onClick={() => update("info", newData)}>click</button>*/}
         </div>
     );
 }
@@ -98,8 +108,7 @@ function FormPartOne({ update, navigation }) {
 function FormPartTwo({ update, navigation }) {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        console.log(data)
-        update("message_attributes", data)
+        update("message", data)
         navigation()
     };
 
@@ -120,7 +129,7 @@ function FormPartTwo({ update, navigation }) {
 function FormFinalMessage({ update }) {
 
     useEffect(() => {
-       update()
+        update()
     }, [])
 
     return (
@@ -128,7 +137,6 @@ function FormFinalMessage({ update }) {
             <h1>Thanks</h1>
             <p>Thank you for your feedback !</p>
             <p> Our team will get back to you soon.</p>
-            {/*<button type="submit" onClick={submitForm}>Submit</button>*/}
         </div>
     );
 }
