@@ -9,14 +9,39 @@
 infos = Info.create([
     {
         firstname: "John",
-        lastname: "DO",
-        email: "john.do@gmail.com"
+        lastname: "Do",
+        email: "john.do@gmail.com",
+        message_attributes: 
+				{
+					review: "lorem ipsum dolor"
+				}
+    },
+    {
+        firstname: "Annabelle",
+        lastname: "Poupé",
+        email: "annabelle@mail.com",
+        message_attributes: 
+				{
+					review: "dummy text"
+				}
+    },
+    {
+        firstname: "Freddy",
+        lastname: "Cruger",
+        email: "freddy.crug@gmail.com",
+        message_attributes: 
+				{
+					review: "randdom text"
+				}
+    },
+    {
+        firstname: "Tony",
+        lastname: "Stark",
+        email: "stark.tony@corporate.com",
+        message_attributes: 
+				{
+					review: "Marvel avenger"
+				}
     },
 ])
 
-messages = Message.create([
-    {
-        review: "Aliquam accumsan commodo risus at dapibus. Suspendisse at diam a magna euismod suscipit. Ut vel erat congue, fringilla tortor sed, dictum quam",
-        info: infos.first
-    },
-])

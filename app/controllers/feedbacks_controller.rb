@@ -28,7 +28,7 @@ class FeedbacksController < ApplicationController
         # redirection fonctionne mais va sur la route GEt et pas PATCH/PUT...
         if Info.exists?(email: params[:info][:email])
             info = Info.find_by(email: params[:info][:email])
-            redirect_to action: 'update', id: info.id, params: info_params
+            redirect_to action: 'update', id: info.id, params: info_params, format: 'json'
         else
             info = Info.new(info_params)
             if info.save

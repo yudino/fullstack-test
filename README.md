@@ -37,7 +37,15 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
 
 ## Install
 
-You tell me.
+run bundle exec rails db:prepare
+run npm install or yarn install
+run bundle exec rails s
+navigate to http://localhost:3000
+
+Memo :
+
+Update redirection does not work properly because it is mix with the GET route.
+For the show action, i did not do the p and n paramaters.
 
 ## Additional notes
 
