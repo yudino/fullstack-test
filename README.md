@@ -37,10 +37,10 @@ You'll have to make a three steps satisfaction form with [Ruby on Rails](https:/
 
 ## Install
 
-run bundle exec rails db:prepare
-run npm install or yarn install
-run bundle exec rails s
-navigate to http://localhost:3000
+* run bundle exec rails db:prepare
+* run npm install or yarn install
+* run bundle exec rails s
+* navigate to http://localhost:3000
 
 Memo :
 
