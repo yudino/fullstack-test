@@ -10,24 +10,29 @@ class FeedbacksController < ApplicationController
     end
 
     def index
-        db = Info.joins(:message)
-        info = db
+        info = Info.joins(:message)
         esc_rows = (params[:n].to_i * params[:p].to_i) - params[:n].to_i 
-        
+        def_rows = 10
+        def_dir = "DESC"
         #feedbacks?s=keyword OK
         if params[:s] != nil 
-        info = info.where(['firstname like :s or lastname like :s or email like :s or review like :s', {s: params[:s] + "%"}])
+            info = info.where(['firstname like :s or lastname like :s or email like :s or review like :s', {s: params[:s] + "%"}])
         end 
 
         #feedbacks?o=column&d=asc or desc OK
-        if params[:o] != nil && params[:d] != nil && params[:d] === 'desc'.upcase || 'asc'.upcase
-        info = info.order("#{params[:o]} #{params[:d]}")
+        if params[:o] != nil && params[:d] != nil && params[:d] == 'desc'.upcase || 'asc'.upcase
+            info = info.order("#{params[:o]} #{params[:d]}")
         end
 
         #feedbacks?p=number&n=number  OK
         if params[:p] != nil && params[:n] != nil
-        info = info.offset(esc_rows).limit(params[:n])
+            info = info.offset(esc_rows).limit(params[:n])
         end
+        #default without params
+        if params[:s] == nil && params[:o] == nil && params[:d] == nil && params[:p] == nil && params[:n] == nil
+            info = info.order("created_at #{def_dir}").limit(def_rows)
+        end
+
         render json: InfoSerializer.new(info, options).serializable_hash.to_json
     end
 
