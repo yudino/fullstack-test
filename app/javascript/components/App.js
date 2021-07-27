@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-import FormPartOne from './FormPartOne';
-import FormPartTwo from './FormPartTwo';
-import FormFinalMessage from './FormFinalMessage';
+import FormPartOne from './FormParts/FormPartOne';
+import FormPartTwo from './FormParts/FormPartTwo';
+import FormFinalMessage from './FormParts/FormFinalMessage';
 
 import "../stylesheets/style.css";
 
